@@ -36,6 +36,11 @@ p {
 
 /* ---- layout ---- */
 
+img {
+  width: 200px;
+  border: 1px solid #000
+}
+
 #site-header {
   padding: 30px 0;
   color: white;

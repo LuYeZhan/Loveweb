@@ -42,21 +42,21 @@ Basic css structure, with the images, sounds and all display features
 
 
 
-Main.js
+App.js
 
 Is a Construction Object function, with the main features.
 
 Variables			                        Methods:
 
-Entry point                                generateLayout
+Entry point                            generateLayout
 
 layoutInstance                          generateNavbar
 
-navbarInstance						activateRouter
+navbarInstance					          	activateRouter
 
-rootElements							addListenersToNavBar
+rootElements							        addListenersToNavBar
 
-links 											changePage
+links 											          changePage
 
 
 
