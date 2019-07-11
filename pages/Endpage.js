@@ -15,7 +15,7 @@ EndPage.prototype.generate = async function(){
     <header>
       <h2>I'ts a Match</h2>
     </header>
-    <section>
+    <section class="endpage-section">
   `;
   this.users.forEach((users) => {
     if (users.dob.age > 35){

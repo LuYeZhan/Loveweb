@@ -13,7 +13,7 @@ LovePage.prototype.generate = async function(){
   await this.connectToAPI();
   this.elements = `
     <header>
-      <h2>Soul mate</h2>
+      <h2>love is all you need</h2>
     </header>
     <div class="div-header">
     <section class="love-section">

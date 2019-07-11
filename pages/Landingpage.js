@@ -8,7 +8,7 @@ function LandingPage(parentElement){
 LandingPage.prototype.generate = function(){
   this.elements = `
     <header>
-    <h1>Lover</h1>
+    <h1>Lovapp</h1>
     </header>
   `;
   this.render();
