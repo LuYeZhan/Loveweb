@@ -8,8 +8,7 @@ function LandingPage(parentElement){
 LandingPage.prototype.generate = function(){
   this.elements = `
     <header>
-    <h1>Love is all you need</h1>
-    <h2>Random stupid love quote </h2>
+    <h1>Lover</h1>
     </header>
   `;
   this.render();
@@ -17,5 +16,4 @@ LandingPage.prototype.generate = function(){
 
 LandingPage.prototype.render = function(){
   this.parentElement.innerHTML = this.elements;
-
 }

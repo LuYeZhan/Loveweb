@@ -3,21 +3,24 @@
 function main(){
   var ENTRY_POINT = '/';
   var layoutInstance = null;
-  var navbarInstance = null;
+  var mainbarInstance = null;
   var rootElement = document.querySelector('#root');
   var links = [
-    {name: 'Home',
+    {name: '',
     url: '/',
     },
-    {name: 'Love',
+    {name: '',
     url: '/love',
-    }
+    },
+    // {name: '',
+    // url: '/end',
+    // }
   ];
 
-
+var count = 0;
 generateLayout();
-generateNavbar();
-addListenersToNavBar();
+generateMainbar();
+addListenersToMainBar();
 activateRouter();
 
 function generateLayout(){
@@ -25,20 +28,31 @@ function generateLayout(){
   layoutInstance.generate();
 }
 
-function generateNavbar(){
-  navbarInstance = new Navbar(layoutInstance.header, links);
-  navbarInstance.generate();
+function generateMainbar(){
+  mainbarInstance = new Mainbar(layoutInstance.header, links);
+  mainbarInstance.generate();
 }
-function addListenersToNavBar(){
-  var anchors = document.querySelectorAll('nav a');
+function addListenersToMainBar(){
+  var anchors = document.querySelectorAll('#site-header li');
+  var randomNumber = Math.floor(Math.random() * 8)
+
   anchors.forEach(function(anchor){
-    anchor.addEventListener('click', changePage)
+    
+    anchor.addEventListener('click', function(e){changePage(e, randomNumber)})
   })
 }
 function activateRouter(){
   routerInstance.buildDOM(ENTRY_POINT, layoutInstance.main);
 }
-function changePage(event){
+function changePage(event, randomNumber){
+  console.log(randomNumber, count);
+  if(randomNumber === count){
+    console.log('Match!')
+    // this.generateEndPage(parentElement);
+  } else {
+    console.log("you ugly")
+    count++
+  }
   var url = event.target.attributes.url.value;
   routerInstance.buildDOM(url, layoutInstance.main);
 }
