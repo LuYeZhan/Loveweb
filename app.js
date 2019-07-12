@@ -12,9 +12,7 @@ function main(){
     {name: '',
     url: '/love',
     },
-    // {name: '',
-    // url: '/end',
-    // }
+    
   ];
 
 var count = 0;
@@ -47,14 +45,13 @@ function activateRouter(){
 function changePage(event, randomNumber){
   console.log(randomNumber, count);
   if(randomNumber === count){
-    console.log('Match!')
-    // this.generateEndPage(parentElement);
+    routerInstance.buildDOM('/end',layoutInstance.main)
   } else {
-    console.log("you ugly")
-    count++
+    console.log("you ugly");
+    var url = event.target.attributes.url.value;
+    routerInstance.buildDOM(url, layoutInstance.main);
+    count++;
   }
-  var url = event.target.attributes.url.value;
-  routerInstance.buildDOM(url, layoutInstance.main);
 }
 
 }

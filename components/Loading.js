@@ -7,7 +7,7 @@ function Loading(parentElement){
 
 Loading.prototype.generate = function(){
   this.elements = `
-  <p>Love is all you need</p>
+  <video id="media" src="./videos/loading.mp4" muted="muted" autoplay="autoplay" loop></video>
   `;
   this.render();
 }

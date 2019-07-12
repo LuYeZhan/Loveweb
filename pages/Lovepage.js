@@ -8,13 +8,15 @@ function LovePage(parentElement){
 }
 
 LovePage.prototype.generate = async function(){
+  
   this.loading = new Loading(this.parentElement);
   this.loading.generate();
   await this.connectToAPI();
   this.elements = `
     <header>
-      <h2>love is all you need</h2>
+      <h2>Lástima..</h2>
     </header>
+    <video id="media" src="./videos/middle.mp4" muted="muted" autoplay="autoplay" loop></video>
     <div class="div-header">
     <section class="love-section">
   `;
@@ -28,12 +30,11 @@ LovePage.prototype.generate = async function(){
         <img src="${users.picture.large}"></img>
         <p class="top-p">${users.gender}</p>
         <p>${users.dob.age}</p>
-        <p>${users.location.city}</p>
-        <p>${users.nat}</p>
-       
       </article>  
     `;
     // va arriba <p class="phone">${users.phone}</p>
+    // <p>${users.location.city}</p>
+    // <p>${users.nat}</p>
   })
   this.elements += `</div>
   </section>`

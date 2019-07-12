@@ -13,7 +13,8 @@ EndPage.prototype.generate = async function(){
   await this.connectToAPI();
   this.elements = `
     <header>
-      <h2>I'ts a Match</h2>
+      <h2>I'ts a Match!</h2>
+      <video id="media" src="./videos/end.mp4" muted="muted" autoplay="autoplay" loop></video>
     </header>
     <section class="endpage-section">
   `;
@@ -22,15 +23,17 @@ EndPage.prototype.generate = async function(){
      users.dob.age = Math.floor(Math.random() * 8 + 25);
     };
     this.elements += `
-      <article>
-        <h3>${users.name.first} ${ users.name.last}</h3>
-        <img src="${users.picture.large}"></img>
+     
+        <h3>${users.name.title} ${users.name.first} ${ users.name.last}</h3>
+        <div><img src="${users.picture.large}"></img></div>
         <p class="top-p">${users.gender}</p>
         <p>${users.dob.age}</p>
-        <p>${users.location.city}</p>
         <p>${users.nat}</p>
-        <p class="phone">${users.phone}</p>
-      </article>  
+        <p>${users.location.street}</p>
+        <p>${users.location.city}</p>
+        <p class="phone">${users.email}</p>
+        <p class="phone">${users.cell}</p>
+      
     `;
   })
   this.elements += `
